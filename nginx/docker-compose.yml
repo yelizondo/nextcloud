@@ -1,0 +1,14 @@
+version: "2"
+services:
+    proxy:
+        build: ./
+        networks:
+        - nc-net
+        ports:
+        - 80:80
+        - 443:443
+        restart: on-failure
+networks:
+    nc-net:
+        external:
+            name: nc-net
